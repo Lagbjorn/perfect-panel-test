@@ -1,8 +1,8 @@
 # Задание 1
 ```mysql
 SELECT 
+    c.id,
     CONCAT(first_name, " ", last_name) AS name,
-    age,
     ANY_VALUE(category) AS category,  # COUNT(DISTINCT category) = 1 so it's determined
     GROUP_CONCAT(product SEPARATOR ", ") AS products
 FROM clients AS c 
